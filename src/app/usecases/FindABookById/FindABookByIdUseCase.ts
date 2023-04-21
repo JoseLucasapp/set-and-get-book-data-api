@@ -1,6 +1,6 @@
-import { BooksRepository } from "../repositories/BooksRepository";
+import { BooksRepository } from "../../repositories/BooksRepository";
 
-export class FindABookById {
+export class FindABookByIdUseCase {
     constructor(private booksRepository: BooksRepository) { }
 
     async execute(id: string) {

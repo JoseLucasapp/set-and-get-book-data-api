@@ -1,16 +1,16 @@
-import { Book } from "../../domain/entities/books";
-import { BooksRepository } from "../repositories/BooksRepository";
+import { Book } from "../../../domain/entities/books";
+import { BooksRepository } from "../../repositories/BooksRepository";
 
-type CreateBookRequest = {
+type CreateBookUseCaseRequest = {
     title: string;
     pages: number;
     author: string;
 }
 
-export class CreateBook {
+export class CreateBookUseCase {
     constructor(private booksRepository: BooksRepository) { }
 
-    async execute({ title, pages, author }: CreateBookRequest) {
+    async execute({ title, pages, author }: CreateBookUseCaseRequest) {
         const book = await this.booksRepository.findByTitle(title)
 
         if (book) {

@@ -1,11 +1,11 @@
 import { InMemoryBooksRepository } from "../../../../tests/repositories/in-memory-books-repository"
-import { FindABookById } from '../FindABookById'
+import { FindABookByIdUseCase } from '../FindABookById/FindABookByIdUseCase'
 
 export const FindABookByIdTest = () => describe('Get book by id', () => {
     it('Should get a book by id', async () => {
         const booksRepository = new InMemoryBooksRepository()
 
-        const book = new FindABookById(booksRepository)
+        const book = new FindABookByIdUseCase(booksRepository)
 
         const res = await book.execute('1')
 
