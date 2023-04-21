@@ -1,7 +1,7 @@
-import { InMemoryBooksRepository } from "../../../tests/repositories/in-memory-books-repository"
-import { CreateBook } from "./CreateBook"
+import { InMemoryBooksRepository } from "../../../../tests/repositories/in-memory-books-repository"
+import { CreateBook } from "../CreateBook"
 
-describe('Create new book', () => {
+export const CreateBookTest = () => describe('Create new book', () => {
     it('Should be able to create a new book', async () => {
         const booksRepository = new InMemoryBooksRepository()
 
